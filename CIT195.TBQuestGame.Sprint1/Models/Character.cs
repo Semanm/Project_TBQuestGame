@@ -95,6 +95,11 @@ namespace CIT195.TBQuestGame.Sprint1
 
         #region METHODS
 
+        public virtual string Greeting()
+        {
+            return ("Hello");
+        }
+
         #endregion
     }
 }

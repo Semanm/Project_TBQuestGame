@@ -9,7 +9,7 @@ namespace CIT195.TBQuestGame.Sprint1
     /// <summary>
     /// Guest class, inherites from Character class
     /// </summary>
-    public class Guest : Character
+    public class Staff : Character
     {
         #region ENUMERABLES
 
@@ -40,7 +40,7 @@ namespace CIT195.TBQuestGame.Sprint1
 
         #region CONSTRUCTORS
 
-        public Guest()
+        public Staff()
         {
 
         }
@@ -51,7 +51,7 @@ namespace CIT195.TBQuestGame.Sprint1
         /// <param name="gender">guest gender</param>
         /// <param name="race">guest race</param>
         /// <param name="currentRoomNumber">room location as an index of the hall array</param>
-        public Guest(
+        public Staff(
             string name,
             GenderType gender,
             RaceType race,
@@ -65,17 +65,6 @@ namespace CIT195.TBQuestGame.Sprint1
 
         #region METHODS
 
-        /// <summary>
-        /// override method for the guest's greeting
-        /// </summary>
-        /// <returns>greeting string</returns>
-        public override string Greeting()
-        {
-            string greeting;
-            greeting = string.Format("{0}, my name is {1}. {3}", base.Greeting(), _name, _greeting);
-
-            return greeting;
-        }
 
         #endregion
     }

@@ -181,7 +181,7 @@ namespace CIT195.TBQuestGame.Sprint1
             DisplayMessage("Race: " + _guestList.Guests[guestNumber].Race);
             DisplayMessage("Gender: " + _guestList.Guests[guestNumber].Gender);
             DisplayMessage("Appears Friendly: " + _guestList.Guests[guestNumber].AppearsFriendly);
-            DisplayMessage("Greeting: " + _guestList.Guests[guestNumber].Greeting);
+            DisplayMessage("Greeting: " + _guestList.Guests[guestNumber].InitialGreeting);
         }
 
         /// <summary>

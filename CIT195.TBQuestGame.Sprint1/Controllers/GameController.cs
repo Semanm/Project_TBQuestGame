@@ -122,7 +122,7 @@ namespace CIT195.TBQuestGame.Sprint1
                 Race = Guest.RaceType.Elf,
                 AppearsFriendly = true,
                 CurrentRoomNumber = 1,
-                Greeting = "Hello, my name is Mr. Smith and I am a traveler from the North Region."
+                InitialGreeting = "Hello, my name is Mr. Smith and I am a traveler from the North Region."
             };
 
             _hall.Rooms[2].Name = "The Kitchen";
@@ -144,7 +144,7 @@ namespace CIT195.TBQuestGame.Sprint1
                 Race = Guest.RaceType.Dwarf,
                 AppearsFriendly = false,
                 CurrentRoomNumber = 3,
-                Greeting = "You are in my room. What are your intentions?"
+                InitialGreeting = "You are in my room. What are your intentions?"
             };
         }
 
