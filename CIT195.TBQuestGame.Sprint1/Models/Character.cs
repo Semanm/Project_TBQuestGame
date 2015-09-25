@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace CIT195.TBQuestGame.Sprint1
 {
+
+    /// <summary>
+    /// interface for greeting implementation of non-player characters
+    /// </summary>
+    public interface IGreeting
+    {
+        string Greeting(Player player);
+    }
+
     /// <summary>
     /// base class for player and guests in game
     /// </summary>
@@ -94,17 +103,6 @@ namespace CIT195.TBQuestGame.Sprint1
         #endregion
 
         #region METHODS
-
-        /// <summary>
-        /// virtual method with default greeting
-        /// </summary>
-        /// <param name="player"></param>
-        /// <returns>string "Hello"</returns>
-        public virtual string Greeting(Player player)
-        {
-            return ("Hello");
-        }
-
 
         /// <summary>
         /// virtual method with default leave the game action

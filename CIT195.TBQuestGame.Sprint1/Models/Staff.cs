@@ -9,7 +9,7 @@ namespace CIT195.TBQuestGame.Sprint1
     /// <summary>
     /// Guest class, inherites from Character class
     /// </summary>
-    public class Staff : Character
+    public class Staff : Character, IGreeting
     {
         #region ENUMERABLES
 
@@ -69,7 +69,7 @@ namespace CIT195.TBQuestGame.Sprint1
         /// override method for the staff's greeting
         /// </summary>
         /// <returns>greeting string</returns>
-        public override string Greeting(Player player)
+        public string Greeting(Player player)
         {
             string greeting;
             greeting = string.Format("Hello, my name is {1}. {3}", _name, _initialGreeting);
