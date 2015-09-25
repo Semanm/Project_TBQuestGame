@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CIT195.TBQuestGame.Sprint1
+namespace CIT195.TBQuestGame.Sprint2
 {
     /// <summary>
     /// class for the rooms in the game
@@ -32,7 +32,8 @@ namespace CIT195.TBQuestGame.Sprint1
 
         private string _description;
 
-        private Guest[] _guests = new Guest[GuestList.NUMBER_OF_GUESTS];
+        private Guest _roomGuest;
+        private Staff _roomStaff;
 
         #endregion
 
@@ -68,11 +69,17 @@ namespace CIT195.TBQuestGame.Sprint1
             get { return _description; }
             set { _description = value; }
         }
-
-        public Guest[] Guests
+        
+        public Guest RoomGuest
         {
-            get { return _guests; }
-            set { _guests = value; }
+            get { return _roomGuest; }
+            set { _roomGuest = value; }
+        }
+
+        public Staff RoomStaff
+        {
+            get { return _roomStaff; }
+            set { _roomStaff = value; }
         }
 
         #endregion
@@ -88,25 +95,6 @@ namespace CIT195.TBQuestGame.Sprint1
 
         #region METHODS
 
-        public bool HasGuests()
-        {
-            if (_guests != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        private void UpdateRoomGuests()
-        {
-            foreach (Guest guest in Guests)
-            {
-                
-            }
-        }
 
         #endregion
     }

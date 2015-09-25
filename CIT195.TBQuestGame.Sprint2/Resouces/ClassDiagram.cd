@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
-  <Class Name="CIT195.TBQuestGame.Sprint1.Hall">
+  <Class Name="CIT195.TBQuestGame.Sprint2.Hall">
     <Position X="7.75" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAACAAAAAgAAAAAAAAAAAEA=</HashCode>
       <FileName>Models\Hall.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CIT195.TBQuestGame.Sprint1.Character">
+  <Class Name="CIT195.TBQuestGame.Sprint2.Character">
     <Position X="2.75" Y="0.5" Width="2.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Enum Name="CIT195.TBQuestGame.Sprint1.Character.GenderName">
+      <Enum Name="CIT195.TBQuestGame.Sprint2.Character.GenderName">
         <TypeIdentifier>
           <NewMemberFileName>Models\Character.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
-      <Enum Name="CIT195.TBQuestGame.Sprint1.Character.RaceName">
+      <Enum Name="CIT195.TBQuestGame.Sprint2.Character.RaceName">
         <TypeIdentifier>
           <NewMemberFileName>Models\Character.cs</NewMemberFileName>
         </TypeIdentifier>
@@ -29,27 +29,27 @@
       <FileName>Models\Character.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CIT195.TBQuestGame.Sprint1.Guest">
+  <Class Name="CIT195.TBQuestGame.Sprint2.Guest">
     <Position X="5.5" Y="3.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAIAAAAAAAAAAAAAEAAEgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Guest.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CIT195.TBQuestGame.Sprint1.Player">
+  <Class Name="CIT195.TBQuestGame.Sprint2.Player">
     <Position X="0.5" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Models\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CIT195.TBQuestGame.Sprint1.Room">
+  <Class Name="CIT195.TBQuestGame.Sprint2.Room">
     <Position X="10" Y="0.5" Width="2" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Enum Name="CIT195.TBQuestGame.Sprint1.Room.TypeName">
+      <Enum Name="CIT195.TBQuestGame.Sprint2.Room.TypeName">
         <TypeIdentifier>
           <NewMemberFileName>Models\Room.cs</NewMemberFileName>
         </TypeIdentifier>
@@ -60,7 +60,7 @@
       <FileName>Models\Room.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CIT195.TBQuestGame.Sprint1.GuestList">
+  <Class Name="CIT195.TBQuestGame.Sprint2.GuestList">
     <Position X="5.5" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>IAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAg=</HashCode>

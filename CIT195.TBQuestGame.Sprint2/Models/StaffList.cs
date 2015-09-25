@@ -8,9 +8,9 @@ using CIT195.TBQuestGame.Sprint2.Controllers;
 namespace CIT195.TBQuestGame.Sprint2
 {
     /// <summary>
-    /// class to manage an array of guests
+    /// class to manage an array of staff
     /// </summary>
-    public class GuestList
+    public class StaffList
     {
         #region ENUMERABLES
 
@@ -18,27 +18,27 @@ namespace CIT195.TBQuestGame.Sprint2
 
         #region FIELDS
 
-        public const int MAX_NUMBER_OF_GUESTS = Settings.MAX_NUMBER_OF_GUESTS;
+        public const int MAX_NUMBER_OF_STAFF = Settings.MAX_NUMBER_OF_STAFF;
 
-        private Guest[] _guests;
+        private Staff[] _staff;
 
 
         #endregion
 
         #region PROPERTIES
-        public Guest[] Guests
+        public Staff[] Staff
         {
-            get { return _guests; }
-            set { _guests = value; }
+            get { return _staff; }
+            set { _staff = value; }
         }
 
         #endregion
 
         #region CONSTRUCTORS
 
-        public GuestList()
+        public StaffList()
         {
-            _guests = new Guest[MAX_NUMBER_OF_GUESTS];
+            _staff = new Staff[MAX_NUMBER_OF_STAFF];
         }
 
         #endregion

@@ -4,8 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CIT195.TBQuestGame.Sprint1
+namespace CIT195.TBQuestGame.Sprint2
 {
+
+    /// <summary>
+    /// interface for greeting implementation of non-player characters
+    /// </summary>
+    public interface IGreeting
+    {
+        string Greeting(Player player);
+    }
+
     /// <summary>
     /// base class for player and guests in game
     /// </summary>
@@ -13,13 +22,13 @@ namespace CIT195.TBQuestGame.Sprint1
     {
         #region ENUMERABLES
 
-        public enum GenderName
+        public enum GenderType
         {
             Male,
             Female
         }
 
-        public enum RaceName
+        public enum RaceType
         {
             Human,
             Elf,
@@ -31,8 +40,8 @@ namespace CIT195.TBQuestGame.Sprint1
         #region FIELDS
 
         protected string _name;
-        protected GenderName _gender;
-        protected RaceName _race;
+        protected GenderType _gender;
+        protected RaceType _race;
         protected int _currentRoomNumber;
 
         #endregion
@@ -45,13 +54,13 @@ namespace CIT195.TBQuestGame.Sprint1
             set { _name = value; }
         }
 
-        public GenderName Gender
+        public GenderType Gender
         {
             get { return _gender; }
             set { _gender = value; }
         }
 
-        public RaceName Race
+        public RaceType Race
         {
             get { return _race; }
             set { _race = value; }
@@ -81,8 +90,8 @@ namespace CIT195.TBQuestGame.Sprint1
         /// <param name="currentRoomNumber">room location as an index of the hall array</param>
         public Character(
             string name,
-            GenderName gender,
-            RaceName race,
+            GenderType gender,
+            RaceType race,
             int currentRoomNumber)
         {
             _name = name;
@@ -94,6 +103,20 @@ namespace CIT195.TBQuestGame.Sprint1
         #endregion
 
         #region METHODS
+
+        /// <summary>
+        /// virtual method with default leave the game action
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns>string default message when character leaves the Mansion</returns>
+        public virtual string Leave()
+        {
+            string leaveMessage;
+            leaveMessage = String.Format("{0} has left the Mansion.", _name);
+
+            return (leaveMessage);
+        }
+
 
         #endregion
     }

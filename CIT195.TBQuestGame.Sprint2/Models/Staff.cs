@@ -9,7 +9,7 @@ namespace CIT195.TBQuestGame.Sprint2
     /// <summary>
     /// Guest class, inherites from Character class
     /// </summary>
-    public class Guest : Character, IGreeting
+    public class Staff : Character, IGreeting
     {
         #region ENUMERABLES
 
@@ -40,7 +40,7 @@ namespace CIT195.TBQuestGame.Sprint2
 
         #region CONSTRUCTORS
 
-        public Guest()
+        public Staff()
         {
 
         }
@@ -51,7 +51,7 @@ namespace CIT195.TBQuestGame.Sprint2
         /// <param name="gender">guest gender</param>
         /// <param name="race">guest race</param>
         /// <param name="currentRoomNumber">room location as an index of the hall array</param>
-        public Guest(
+        public Staff(
             string name,
             GenderType gender,
             RaceType race,
@@ -66,7 +66,7 @@ namespace CIT195.TBQuestGame.Sprint2
         #region METHODS
 
         /// <summary>
-        /// override method for the guest's greeting
+        /// override method for the staff's greeting
         /// </summary>
         /// <returns>greeting string</returns>
         public string Greeting(Player player)
@@ -78,13 +78,13 @@ namespace CIT195.TBQuestGame.Sprint2
         }
 
         /// <summary>
-        /// override method for a guest who leaves the Mansion
+        /// override method for a staff who leaves the Mansion
         /// </summary>
         /// <returns>message for leaving</returns>
         public override string Leave()
         {
             string leavingMessage;
-            leavingMessage = String.Format("Guest {0} has left the game. The Mansion Master will decide if the game should continue.", _name);
+            leavingMessage = String.Format("Staff {0} has left the game. The Mansion Master will decide whether to replace {0}.", _name);
 
             return (leavingMessage);
         }

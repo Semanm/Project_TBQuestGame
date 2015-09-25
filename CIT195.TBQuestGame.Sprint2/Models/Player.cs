@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CIT195.TBQuestGame.Sprint1
+namespace CIT195.TBQuestGame.Sprint2
 {
     /// <summary>
     /// Player class, inherites from Character class
@@ -42,8 +42,8 @@ namespace CIT195.TBQuestGame.Sprint1
         /// <param name="currentRoomNumber">room location as an index of the hall array</param>
         public Player(
             string name,
-            GenderName gender,
-            RaceName race,
+            GenderType gender,
+            RaceType race,
             int currentRoomNumber)
             : base(name, gender, race, currentRoomNumber)
         {
@@ -55,12 +55,15 @@ namespace CIT195.TBQuestGame.Sprint1
         #region METHODS
 
         /// <summary>
-        /// change player location
+        /// override method for a player who leaves the Mansion
         /// </summary>
-        /// <param name="roomNumber">new room number</param>
-        public void MoveTo(int roomNumber)
+        /// <returns>message for leaving</returns>
+        public override string Leave()
         {
-            _currentRoomNumber = roomNumber;
+            string leavingMessage;
+            leavingMessage = String.Format("Player {0} has left the game. The Mansion Master will decide whether to continue playing the game.", _name);
+
+            return (leavingMessage);
         }
 
         #endregion
