@@ -54,7 +54,17 @@ namespace CIT195.TBQuestGame.Sprint1
 
         #region METHODS
 
+        /// <summary>
+        /// override method for a player who leaves the Mansion
+        /// </summary>
+        /// <returns>message for leaving</returns>
+        public override string Leave()
+        {
+            string leavingMessage;
+            leavingMessage = String.Format("Player {0} has left the game. The Mansion Master will decide whether to continue playing the game.", _name);
 
+            return (leavingMessage);
+        }
 
         #endregion
     }

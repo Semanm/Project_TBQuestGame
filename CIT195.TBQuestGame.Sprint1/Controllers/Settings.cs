@@ -10,5 +10,6 @@ namespace CIT195.TBQuestGame.Sprint1.Controllers
     {
         public const int MAX_NUMBER_OF_ROOMS = 4;
         public const int MAX_NUMBER_OF_GUESTS = 4;
+        public const int MAX_NUMBER_OF_STAFF = 4;
     }
 }

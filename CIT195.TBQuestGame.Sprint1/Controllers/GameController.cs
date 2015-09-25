@@ -19,6 +19,7 @@ namespace CIT195.TBQuestGame.Sprint1
         private Player _myPlayer;
         private Hall _hall;
         private GuestList _guestList;
+        private StaffList _staffList;
 
         #endregion
 
@@ -52,6 +53,7 @@ namespace CIT195.TBQuestGame.Sprint1
             InitializePlayer();
             InitializeHall();
             InitializeGuestList();
+            InitializeStaffList();
         }
 
         /// <summary>
@@ -62,7 +64,7 @@ namespace CIT195.TBQuestGame.Sprint1
             //
             // instantiate a new ConsoleView object
             //
-            ConsoleView userConsoleView = new ConsoleView(_myPlayer, _hall, _guestList);
+            ConsoleView userConsoleView = new ConsoleView(_myPlayer, _hall, _guestList, _staffList);
 
             userConsoleView.DisplayWelcomeScreen();
 
@@ -131,6 +133,15 @@ namespace CIT195.TBQuestGame.Sprint1
             _hall.Rooms[2].IsLighted = true;
             _hall.Rooms[2].CanEnter = true;
             _hall.Rooms[2].RoomGuest = null;
+            _hall.Rooms[2].RoomStaff = new Staff
+            {
+                Name = "Mrs. Porter",
+                Gender = Guest.GenderType.Female,
+                Race = Guest.RaceType.Elf,
+                AppearsFriendly = true,
+                CurrentRoomNumber = 2,
+                InitialGreeting = "Hello, my name is Mrs. Porter."
+            };
 
             _hall.Rooms[3].Name = "The Armory";
             _hall.Rooms[3].Description = "You are in a room, crowed with racks of swords.";
@@ -167,6 +178,27 @@ namespace CIT195.TBQuestGame.Sprint1
             }
 
         }
+
+        /// <summary>
+        /// initialize the staff list from the room staff information
+        /// </summary>
+        public void InitializeStaffList()
+        {
+            _staffList = new StaffList();
+
+            int staffNumber = 0;
+
+            foreach (Room room in _hall.Rooms)
+            {
+                if (room.RoomStaff != null)
+                {
+                    _staffList.Staff[staffNumber] = room.RoomStaff;
+                    staffNumber++;
+                }
+            }
+
+        }
+
         #endregion
     }
 }

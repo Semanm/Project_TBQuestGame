@@ -95,10 +95,30 @@ namespace CIT195.TBQuestGame.Sprint1
 
         #region METHODS
 
-        public virtual string Greeting()
+        /// <summary>
+        /// virtual method with default greeting
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns>string "Hello"</returns>
+        public virtual string Greeting(Player player)
         {
             return ("Hello");
         }
+
+
+        /// <summary>
+        /// virtual method with default leave the game action
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns>string default message when character leaves the Mansion</returns>
+        public virtual string Leave()
+        {
+            string leaveMessage;
+            leaveMessage = String.Format("{0} has left the Mansion.", _name);
+
+            return (leaveMessage);
+        }
+
 
         #endregion
     }

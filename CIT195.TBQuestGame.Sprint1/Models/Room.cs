@@ -32,7 +32,8 @@ namespace CIT195.TBQuestGame.Sprint1
 
         private string _description;
 
-        private Guest _roomGuest;     
+        private Guest _roomGuest;
+        private Staff _roomStaff;
 
         #endregion
 
@@ -73,6 +74,12 @@ namespace CIT195.TBQuestGame.Sprint1
         {
             get { return _roomGuest; }
             set { _roomGuest = value; }
+        }
+
+        public Staff RoomStaff
+        {
+            get { return _roomStaff; }
+            set { _roomStaff = value; }
         }
 
         #endregion
