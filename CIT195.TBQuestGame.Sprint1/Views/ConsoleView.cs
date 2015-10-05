@@ -22,7 +22,7 @@ namespace CIT195.TBQuestGame.Sprint1
         // horizontal and verical margins in console window for display
         //
         private const int DISPLAY_HORIZONTAL_MARGIN = Settings.DISPLAY_HORIZONTAL_MARGIN;
-        private const int DISPALY_VERITCAL_MARGIN = Settings.DISPALY_VERITCAL_MARGIN;
+        private const int DISPLAY_VERITCAL_MARGIN = Settings.DISPLAY_VERITCAL_MARGIN;
 
         //
         // declare the major data objects

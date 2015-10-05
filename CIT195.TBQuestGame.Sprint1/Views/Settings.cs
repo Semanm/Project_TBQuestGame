@@ -18,6 +18,6 @@ namespace CIT195.TBQuestGame.Sprint1.Views
         // horizontal and verical margins in console window for display
         //
         public const int DISPLAY_HORIZONTAL_MARGIN = 3;
-        public const int DISPALY_VERITCAL_MARGIN = 1;
+        public const int DISPLAY_VERITCAL_MARGIN = 1;
     }
 }

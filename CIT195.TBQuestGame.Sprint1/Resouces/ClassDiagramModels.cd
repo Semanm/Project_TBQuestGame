@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="CIT195.TBQuestGame.Sprint1.Hall">
-    <Position X="7.75" Y="0.5" Width="2" />
+    <Position X="5.5" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAACAAAAAgAAAAAAAAAAAEA=</HashCode>
       <FileName>Models\Hall.cs</FileName>
@@ -13,38 +13,39 @@
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Enum Name="CIT195.TBQuestGame.Sprint1.Character.GenderName">
+      <Enum Name="CIT195.TBQuestGame.Sprint1.Character.GenderType">
         <TypeIdentifier>
           <NewMemberFileName>Models\Character.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
-      <Enum Name="CIT195.TBQuestGame.Sprint1.Character.RaceName">
+      <Enum Name="CIT195.TBQuestGame.Sprint1.Character.RaceType">
         <TypeIdentifier>
           <NewMemberFileName>Models\Character.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>QAAAMAAAAAAAAACBAAAAAAQAAAAAAAAAACAAAAEAAAA=</HashCode>
+      <HashCode>QAAAMAAAAAAAAACBAAAAAAQAAAEAAAAAACAAAAEAAAA=</HashCode>
       <FileName>Models\Character.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CIT195.TBQuestGame.Sprint1.Guest">
     <Position X="5.5" Y="3.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAAEAAEgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAAEAAAAAAAAEgAEAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Guest.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CIT195.TBQuestGame.Sprint1.Player">
     <Position X="0.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAEAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Models\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CIT195.TBQuestGame.Sprint1.Room">
-    <Position X="10" Y="0.5" Width="2" />
+    <Position X="7.75" Y="0.5" Width="2" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -56,15 +57,30 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAgAAQEAAgAAAQAAEAAAAIABQAAAAAAAAA=</HashCode>
+      <HashCode>AIgAIAAAAAAgAAQEAAgAAAQAAEAAAAYABQBAAAAAAAA=</HashCode>
       <FileName>Models\Room.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CIT195.TBQuestGame.Sprint1.GuestList">
-    <Position X="5.5" Y="0.5" Width="2" />
+    <Position X="10" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>IAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Models\GuestList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CIT195.TBQuestGame.Sprint1.Staff">
+    <Position X="0.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAEAAAAAAAAEgAEAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Staff.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CIT195.TBQuestGame.Sprint1.StaffList">
+    <Position X="10" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAACAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\StaffList.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
