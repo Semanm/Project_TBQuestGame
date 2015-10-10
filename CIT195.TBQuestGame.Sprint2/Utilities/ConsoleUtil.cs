@@ -82,11 +82,11 @@ namespace CIT195.TBQuestGame.Sprint2
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
-        public static String ToLabelFormat(this String s)
+        public static String ToLabelFormat(String s)
         {
             var newStr = Regex.Replace(s, "(?<=[A-Z])(?=[A-Z][a-z])", " ");
             newStr = Regex.Replace(newStr, "(?<=[^A-Z])(?=[A-Z])", " ");
-            newStr = Regex.Replace(newStr, "(?<=[A-Za-z])(?=[^A-Za-z])", " ");
+            //newStr = Regex.Replace(newStr, "(?<=[A-Za-z])(?=[^A-Za-z])", " ");
 
             return newStr;
         }

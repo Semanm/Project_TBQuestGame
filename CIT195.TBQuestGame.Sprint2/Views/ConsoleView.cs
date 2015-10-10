@@ -475,7 +475,7 @@ namespace CIT195.TBQuestGame.Sprint2
                     if (choice != Player.ActionChoice.None)
                     {
                         actionChoiceText = "(" + ((int)choice) + ") " +
-                            choice.ToString();
+                            ConsoleUtil.ToLabelFormat(choice.ToString());
                         DisplayMessage(actionChoiceText);
                     }
 
@@ -494,7 +494,7 @@ namespace CIT195.TBQuestGame.Sprint2
                 {
                     playerActionChoice = (Player.ActionChoice)playerActionChoiceIndex;
 
-                    DisplayMessage("You have choosen the following action: " + playerActionChoice.ToString());
+                    DisplayMessage("You have choosen the following action: " + ConsoleUtil.ToLabelFormat(playerActionChoice.ToString()));
 
                     DisplayContinuePrompt();
 
