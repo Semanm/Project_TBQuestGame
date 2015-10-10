@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CIT195.TBQuestGame.Sprint1.Controllers;
 
 namespace CIT195.TBQuestGame.Sprint1
 {
@@ -18,7 +17,7 @@ namespace CIT195.TBQuestGame.Sprint1
 
         #region FIELDS
 
-        public const int MAX_NUMBER_OF_STAFF = Settings.MAX_NUMBER_OF_STAFF;
+        public const int MAX_NUMBER_OF_STAFF = ControllerSettings.MAX_NUMBER_OF_STAFF;
 
         private Staff[] _staff;
 

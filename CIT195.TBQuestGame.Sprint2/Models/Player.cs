@@ -18,6 +18,9 @@ namespace CIT195.TBQuestGame.Sprint2
         #region FIELDS
 
         private int _lives;
+        private bool _inHall;
+
+
         
         #endregion
 
@@ -28,6 +31,12 @@ namespace CIT195.TBQuestGame.Sprint2
             set { _lives = value; }
         }
 
+        // TODO Sprint 2 Mod 1 - add InHall bool to Player class
+                public bool InHall
+        {
+            get { return _inHall; }
+            set { _inHall = value; }
+        }
         
         #endregion
 

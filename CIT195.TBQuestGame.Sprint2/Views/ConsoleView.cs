@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CIT195.TBQuestGame.Sprint2.Views;
+//using CIT195.TBQuestGame.Sprint2.Views;
 
 
 namespace CIT195.TBQuestGame.Sprint2
@@ -15,14 +15,14 @@ namespace CIT195.TBQuestGame.Sprint2
         //
         // window size
         //
-        private const int WINDOW_WIDTH = Settings.WINDOW_WIDTH;
-        private const int WINDOW_HEIGHT = Settings.WINDOW_HEIGHT;
+        private const int WINDOW_WIDTH = ViewSettings.WINDOW_WIDTH;
+        private const int WINDOW_HEIGHT = ViewSettings.WINDOW_HEIGHT;
 
         //
         // horizontal and verical margins in console window for display
         //
-        private const int DISPLAY_HORIZONTAL_MARGIN = Settings.DISPLAY_HORIZONTAL_MARGIN;
-        private const int DISPALY_VERITCAL_MARGIN = Settings.DISPALY_VERITCAL_MARGIN;
+        private const int DISPLAY_HORIZONTAL_MARGIN = ViewSettings.DISPLAY_HORIZONTAL_MARGIN;
+        private const int DISPALY_VERITCAL_MARGIN = ViewSettings.DISPALY_VERITCAL_MARGIN;
 
         //
         // declare the major data objects
@@ -217,6 +217,30 @@ namespace CIT195.TBQuestGame.Sprint2
             for (int roomNumber = 0; roomNumber < Hall.MAX_ROOMS; roomNumber++)
             {
                 DisplayRoomInformation(roomNumber);
+            }
+
+            DisplayContinuePrompt();
+        }
+
+        // TODO Sprint 2 Mod 3 - add hall message
+        /// <summary>
+        /// display this message to the player when in the hall
+        /// </summary>
+        public void DisplayHallMessage()
+        {
+            string hallMessage = "You are standing in a long hall. The hall has " +
+                ControllerSettings.MAX_NUMBER_OF_ROOMS +
+                " doors. Each door leads to one of the following rooms.";
+
+            DisplayReset();
+            Console.WriteLine();
+
+            DisplayMessage(hallMessage);
+            Console.WriteLine();
+
+            for (int room = 0; room < ControllerSettings.MAX_NUMBER_OF_ROOMS; room++)
+            {
+               DisplayMessage(_hall.Rooms[room].Name);
             }
 
             DisplayContinuePrompt();

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CIT195.TBQuestGame.Sprint1.Views;
-
 
 namespace CIT195.TBQuestGame.Sprint1
 {
@@ -15,14 +13,14 @@ namespace CIT195.TBQuestGame.Sprint1
         //
         // window size
         //
-        private const int WINDOW_WIDTH = Settings.WINDOW_WIDTH;
-        private const int WINDOW_HEIGHT = Settings.WINDOW_HEIGHT;
+        private const int WINDOW_WIDTH = ViewSettings.WINDOW_WIDTH;
+        private const int WINDOW_HEIGHT = ViewSettings.WINDOW_HEIGHT;
 
         //
         // horizontal and verical margins in console window for display
         //
-        private const int DISPLAY_HORIZONTAL_MARGIN = Settings.DISPLAY_HORIZONTAL_MARGIN;
-        private const int DISPLAY_VERITCAL_MARGIN = Settings.DISPLAY_VERITCAL_MARGIN;
+        private const int DISPLAY_HORIZONTAL_MARGIN = ViewSettings.DISPLAY_HORIZONTAL_MARGIN;
+        private const int DISPLAY_VERITCAL_MARGIN = ViewSettings.DISPLAY_VERITCAL_MARGIN;
 
         //
         // declare the major data objects

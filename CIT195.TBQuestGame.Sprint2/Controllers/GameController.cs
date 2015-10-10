@@ -68,7 +68,8 @@ namespace CIT195.TBQuestGame.Sprint2
 
             userConsoleView.DisplayWelcomeScreen();
 
-            userConsoleView.DisplayAllObjectInformation();
+            //userConsoleView.DisplayAllObjectInformation();
+            userConsoleView.DisplayHallMessage();
 
             userConsoleView.DisplayReset();
             userConsoleView.DisplayExitPrompt();
@@ -84,6 +85,9 @@ namespace CIT195.TBQuestGame.Sprint2
                 Player.GenderType.Female,
                 Player.RaceType.Human,
                 1);
+
+            // TODO Sprint 2 Mod 2 - initialize InHall property
+            _myPlayer.InHall = false;
         }
 
         /// <summary>
