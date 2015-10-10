@@ -89,8 +89,9 @@ namespace CIT195.TBQuestGame.Sprint2
             Console.WriteLine();
         }
 
+        // TODO Sprint 2 Mod 10 - modify method to remove Exit option
         /// <summary>
-        /// display the Continue/Exit prompt
+        /// display the Continue prompt
         /// </summary>
         public void DisplayContinuePrompt()
         {
@@ -98,14 +99,10 @@ namespace CIT195.TBQuestGame.Sprint2
 
             Console.WriteLine();
 
-            DisplayMessage("Press any key to continue or press the ESC key to quit.");
-            Console.WriteLine();
-
+            DisplayMessage("Press any key to continue.");
             ConsoleKeyInfo response = Console.ReadKey();
-            if (response.Key == ConsoleKey.Escape)
-            {
-                System.Environment.Exit(1);
-            }
+
+            Console.WriteLine();
 
             Console.CursorVisible = true;
         }
@@ -353,6 +350,36 @@ namespace CIT195.TBQuestGame.Sprint2
         }
 
         /// <summary>
+        /// display a message in the message area without a new line for the prompt
+        /// </summary>
+        /// <param name="message">string to display</param>
+        public void DisplayPromptMessage(string message)
+        {
+            //
+            // calculate the message area location on the console window
+            //
+            const int MESSAGE_BOX_TEXT_LENGTH = WINDOW_WIDTH - (2 * DISPLAY_HORIZONTAL_MARGIN);
+            const int MESSAGE_BOX_HORIZONTAL_MARGIN = DISPLAY_HORIZONTAL_MARGIN;
+
+            //
+            // create a list of strings to hold the wrapped text message
+            //
+            List<string> messageLines;
+
+            //
+            // call utility method to wrap text and loop through list of strings to display
+            //
+            messageLines = ConsoleUtil.Wrap(message, MESSAGE_BOX_TEXT_LENGTH, MESSAGE_BOX_HORIZONTAL_MARGIN);
+
+            for (int lineNumber = 0; lineNumber < messageLines.Count() - 1; lineNumber++)
+            {
+                Console.WriteLine(messageLines[lineNumber]);                
+            }
+
+            Console.Write(messageLines[messageLines.Count() - 1]);  
+        }
+
+        /// <summary>
         /// provides a menu with options to display the information of the current objects in the game
         /// </summary>
         public void DisplayAllObjectInformation()
@@ -455,13 +482,14 @@ namespace CIT195.TBQuestGame.Sprint2
                 }
 
                 Console.WriteLine();
-                DisplayMessage("Enter the number for the action you would like to take: ");
+                DisplayPromptMessage("Enter the number for the action you would like to take: ");
                 playerResponse = Console.ReadLine();
 
                 if (
                     (Int32.TryParse(playerResponse, out playerActionChoiceIndex)) &&
                     (playerActionChoiceIndex != 0) &&
-                    (playerActionChoiceIndex <= ControllerSettings.MAX_NUMBER_OF_ROOMS - 2)
+                    (playerActionChoiceIndex <= _myPlayer.ActionCount - 1)
+
                     )
                 {
                     playerActionChoice = (Player.ActionChoice)playerActionChoiceIndex;
@@ -473,6 +501,8 @@ namespace CIT195.TBQuestGame.Sprint2
                 }
                 else
                 {
+                    Console.WriteLine();
+
                     DisplayMessage("It appears that you have not provided a valid action." +
                         "Please use the number before each action to indicate your choice.");
 
@@ -484,8 +514,6 @@ namespace CIT195.TBQuestGame.Sprint2
             return playerActionChoice;
 
             Console.WriteLine();
-
-
         }
 
         #endregion

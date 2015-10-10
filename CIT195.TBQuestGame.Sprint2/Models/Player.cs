@@ -14,9 +14,10 @@ namespace CIT195.TBQuestGame.Sprint2
         #region ENUMERABLES
 
         // TODO Sprint 2 Mod 6 - add enum for player action options
-        public enum  ActionChoice
+        public enum ActionChoice
         {
             None,
+            QuitGame,
             OpenDoor,
             Enter
         }
@@ -27,9 +28,8 @@ namespace CIT195.TBQuestGame.Sprint2
 
         private int _lives;
         private bool _inHall;
+        private int _actionCount = Enum.GetNames(typeof(ActionChoice)).Length;
 
-
-        
         #endregion
 
         #region PROPERTIES
@@ -40,12 +40,18 @@ namespace CIT195.TBQuestGame.Sprint2
         }
 
         // TODO Sprint 2 Mod 1 - add InHall bool to Player class
-                public bool InHall
+        public bool InHall
         {
             get { return _inHall; }
             set { _inHall = value; }
         }
-        
+
+        // TODO Sprint 2 Mod 9 - add ActionCount property to expose the number of ActionChoice
+        public int ActionCount
+        {
+            get { return _actionCount; }
+        }
+
         #endregion
 
         #region CONSTRUCTORS
