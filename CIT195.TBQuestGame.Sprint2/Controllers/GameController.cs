@@ -20,6 +20,7 @@ namespace CIT195.TBQuestGame.Sprint2
         private Hall _hall;
         private GuestList _guestList;
         private StaffList _staffList;
+        private Player.ActionChoice _playerActionChoice;  // TODO Sprint 2 Mod 7 - add player action choice variable
 
         #endregion
 
@@ -69,7 +70,22 @@ namespace CIT195.TBQuestGame.Sprint2
             userConsoleView.DisplayWelcomeScreen();
 
             //userConsoleView.DisplayAllObjectInformation();
-            userConsoleView.DisplayHallMessage();
+
+            // TODO Sprint 2 Mod 5 - add game loop
+            //
+            // game loop
+            //
+            while (true)
+            {
+                if (_myPlayer.InHall)
+                {
+                    userConsoleView.DisplayHallMessage();
+                }
+                userConsoleView.DisplayRoomMessage();
+
+                _playerActionChoice = userConsoleView.GetPlayerAction();
+                Console.ReadLine();
+            }
 
             userConsoleView.DisplayReset();
             userConsoleView.DisplayExitPrompt();

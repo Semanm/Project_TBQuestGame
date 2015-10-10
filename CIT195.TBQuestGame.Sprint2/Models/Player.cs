@@ -13,6 +13,14 @@ namespace CIT195.TBQuestGame.Sprint2
     {
         #region ENUMERABLES
 
+        // TODO Sprint 2 Mod 6 - add enum for player action options
+        public enum  ActionChoice
+        {
+            None,
+            OpenDoor,
+            Enter
+        }
+
         #endregion
 
         #region FIELDS

@@ -240,8 +240,24 @@ namespace CIT195.TBQuestGame.Sprint2
 
             for (int room = 0; room < ControllerSettings.MAX_NUMBER_OF_ROOMS; room++)
             {
-               DisplayMessage(_hall.Rooms[room].Name);
+                DisplayMessage(_hall.Rooms[room].Name);
             }
+
+            DisplayContinuePrompt();
+        }
+
+        // TODO Sprint 2 Mod 4 - add room message
+        /// <summary>
+        /// display this message to the player when in a room
+        /// </summary>
+        public void DisplayRoomMessage()
+        {
+
+            DisplayReset();
+            Console.WriteLine();
+
+            DisplayMessage(_hall.Rooms[_myPlayer.CurrentRoomNumber].Description);
+            Console.WriteLine();
 
             DisplayContinuePrompt();
         }
@@ -402,6 +418,74 @@ namespace CIT195.TBQuestGame.Sprint2
                 }
             }
             Console.CursorVisible = true;
+        }
+
+        // TODO Sprint 2 Mod 8 - add method to get player action choice
+        /// <summary>
+        /// get player action choice
+        /// </summary>
+        /// <returns>player action choice enum</returns>
+        public Player.ActionChoice GetPlayerAction()
+        {
+            int playerActionChoiceIndex;
+            string playerResponse;
+            bool validPlayerResponse = false;
+            Player.ActionChoice playerActionChoice = Player.ActionChoice.None;
+
+            while (!validPlayerResponse)
+            {
+                DisplayReset();
+                Console.WriteLine();
+
+                DisplayMessage("You have the following actions available to you.");
+                Console.WriteLine();
+
+                foreach (Player.ActionChoice choice in Enum.GetValues(typeof(Player.ActionChoice)))
+                {
+                    string actionChoiceText;
+
+                    // skip the first enum value that is the default value of "none"
+                    if (choice != Player.ActionChoice.None)
+                    {
+                        actionChoiceText = "(" + ((int)choice) + ") " +
+                            choice.ToString();
+                        DisplayMessage(actionChoiceText);
+                    }
+
+                }
+
+                Console.WriteLine();
+                DisplayMessage("Enter the number for the action you would like to take: ");
+                playerResponse = Console.ReadLine();
+
+                if (
+                    (Int32.TryParse(playerResponse, out playerActionChoiceIndex)) &&
+                    (playerActionChoiceIndex != 0) &&
+                    (playerActionChoiceIndex <= ControllerSettings.MAX_NUMBER_OF_ROOMS - 2)
+                    )
+                {
+                    playerActionChoice = (Player.ActionChoice)playerActionChoiceIndex;
+
+                    DisplayMessage("You have choosen the following action: " + playerActionChoice.ToString());
+
+                    DisplayContinuePrompt();
+
+                }
+                else
+                {
+                    DisplayMessage("It appears that you have not provided a valid action." +
+                        "Please use the number before each action to indicate your choice.");
+
+                    DisplayContinuePrompt();
+                }
+
+            }
+
+            return playerActionChoice;
+
+            Console.WriteLine();
+
+
         }
 
         #endregion
