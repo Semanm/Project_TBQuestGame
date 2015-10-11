@@ -82,7 +82,7 @@ namespace CIT195.TBQuestGame.Sprint2
             Console.BackgroundColor = ConsoleColor.White;
 
             Console.WriteLine(ConsoleUtil.FillStringWithSpaces(WINDOW_WIDTH));
-            Console.WriteLine(ConsoleUtil.Center("The Long Dinner Party Game", WINDOW_WIDTH));
+            Console.WriteLine(ConsoleUtil.Center("The Deadly Dinner Party Game", WINDOW_WIDTH));
             Console.WriteLine(ConsoleUtil.FillStringWithSpaces(WINDOW_WIDTH));
 
             Console.ResetColor();
@@ -99,7 +99,7 @@ namespace CIT195.TBQuestGame.Sprint2
 
             Console.WriteLine();
 
-            DisplayMessage("Press any key to continue.");
+            Console.WriteLine(ConsoleUtil.Center("Press any key to continue.", WINDOW_WIDTH));
             ConsoleKeyInfo response = Console.ReadKey();
 
             Console.WriteLine();
@@ -137,7 +137,7 @@ namespace CIT195.TBQuestGame.Sprint2
 
             Console.WriteLine(ConsoleUtil.FillStringWithSpaces(WINDOW_WIDTH));
             Console.WriteLine(ConsoleUtil.Center("Welcome to", WINDOW_WIDTH));
-            Console.WriteLine(ConsoleUtil.Center("The Long Dinner Party Game", WINDOW_WIDTH));
+            Console.WriteLine(ConsoleUtil.Center("The Deadly Dinner Party Game", WINDOW_WIDTH));
             Console.WriteLine(ConsoleUtil.FillStringWithSpaces(WINDOW_WIDTH));
 
             Console.ResetColor();
@@ -225,7 +225,7 @@ namespace CIT195.TBQuestGame.Sprint2
         /// </summary>
         public void DisplayHallMessage()
         {
-            string hallMessage = "You are standing in a long hall. The hall has " +
+            string hallMessage = "You are standing in a Deadly hall. The hall has " +
                 ControllerSettings.MAX_NUMBER_OF_ROOMS +
                 " doors. Each door leads to one of the following rooms.";
 
@@ -373,10 +373,10 @@ namespace CIT195.TBQuestGame.Sprint2
 
             for (int lineNumber = 0; lineNumber < messageLines.Count() - 1; lineNumber++)
             {
-                Console.WriteLine(messageLines[lineNumber]);                
+                Console.WriteLine(messageLines[lineNumber]);
             }
 
-            Console.Write(messageLines[messageLines.Count() - 1]);  
+            Console.Write(messageLines[messageLines.Count() - 1]);
         }
 
         /// <summary>
@@ -447,7 +447,30 @@ namespace CIT195.TBQuestGame.Sprint2
             Console.CursorVisible = true;
         }
 
-        // TODO Sprint 2 Mod 8 - add method to get player action choice
+        // TODO Sprint 2 Mod 8a - add method to display the player's action choice options
+        /// <summary>
+        /// display the available actions choices
+        /// </summary>
+        public void DisplayActionChoices()
+        {
+            DisplayMessage("You have the following actions available to you.");
+            Console.WriteLine();
+
+            foreach (Player.ActionChoice choice in Enum.GetValues(typeof(Player.ActionChoice)))
+            {
+                string actionChoiceText;
+
+                // skip the first enum value that is the default value of "none"
+                if (choice != Player.ActionChoice.None)
+                {
+                    actionChoiceText = "(" + ((int)choice) + ") " +
+                        ConsoleUtil.ToLabelFormat(choice.ToString());
+                    DisplayMessage(actionChoiceText);
+                }
+            }
+        }
+
+        // TODO Sprint 2 Mod 8b - add method to get player's action choice
         /// <summary>
         /// get player action choice
         /// </summary>
@@ -464,27 +487,13 @@ namespace CIT195.TBQuestGame.Sprint2
                 DisplayReset();
                 Console.WriteLine();
 
-                DisplayMessage("You have the following actions available to you.");
-                Console.WriteLine();
-
-                foreach (Player.ActionChoice choice in Enum.GetValues(typeof(Player.ActionChoice)))
-                {
-                    string actionChoiceText;
-
-                    // skip the first enum value that is the default value of "none"
-                    if (choice != Player.ActionChoice.None)
-                    {
-                        actionChoiceText = "(" + ((int)choice) + ") " +
-                            ConsoleUtil.ToLabelFormat(choice.ToString());
-                        DisplayMessage(actionChoiceText);
-                    }
-
-                }
+                DisplayActionChoices();
 
                 Console.WriteLine();
                 DisplayPromptMessage("Enter the number for the action you would like to take: ");
                 playerResponse = Console.ReadLine();
 
+                // validate user's response
                 if (
                     (Int32.TryParse(playerResponse, out playerActionChoiceIndex)) &&
                     (playerActionChoiceIndex != 0) &&
@@ -494,7 +503,9 @@ namespace CIT195.TBQuestGame.Sprint2
                 {
                     playerActionChoice = (Player.ActionChoice)playerActionChoiceIndex;
 
-                    DisplayMessage("You have choosen the following action: " + ConsoleUtil.ToLabelFormat(playerActionChoice.ToString()));
+                    Console.WriteLine();
+                    DisplayMessage("You have choosen the following action:");
+                    DisplayMessage(ConsoleUtil.ToLabelFormat(playerActionChoice.ToString()));
 
                     DisplayContinuePrompt();
 
@@ -513,7 +524,6 @@ namespace CIT195.TBQuestGame.Sprint2
 
             return playerActionChoice;
 
-            Console.WriteLine();
         }
 
         #endregion

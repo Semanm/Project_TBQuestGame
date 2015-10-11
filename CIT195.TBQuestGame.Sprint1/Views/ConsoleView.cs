@@ -80,7 +80,7 @@ namespace CIT195.TBQuestGame.Sprint1
             Console.BackgroundColor = ConsoleColor.White;
 
             Console.WriteLine(ConsoleUtil.FillStringWithSpaces(WINDOW_WIDTH));
-            Console.WriteLine(ConsoleUtil.Center("The Long Dinner Party Game", WINDOW_WIDTH));
+            Console.WriteLine(ConsoleUtil.Center("The Deadly Dinner Party Game", WINDOW_WIDTH));
             Console.WriteLine(ConsoleUtil.FillStringWithSpaces(WINDOW_WIDTH));
 
             Console.ResetColor();
@@ -138,7 +138,7 @@ namespace CIT195.TBQuestGame.Sprint1
 
             Console.WriteLine(ConsoleUtil.FillStringWithSpaces(WINDOW_WIDTH));
             Console.WriteLine(ConsoleUtil.Center("Welcome to", WINDOW_WIDTH));
-            Console.WriteLine(ConsoleUtil.Center("The Long Dinner Party Game", WINDOW_WIDTH));
+            Console.WriteLine(ConsoleUtil.Center("The Deadly Dinner Party Game", WINDOW_WIDTH));
             Console.WriteLine(ConsoleUtil.FillStringWithSpaces(WINDOW_WIDTH));
 
             Console.ResetColor();
