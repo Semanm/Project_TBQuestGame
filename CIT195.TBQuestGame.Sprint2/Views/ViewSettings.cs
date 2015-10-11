@@ -11,7 +11,7 @@ namespace CIT195.TBQuestGame.Sprint2
         //
         // window size
         //
-        public const int WINDOW_WIDTH = 50;
+        public const int WINDOW_WIDTH = 79;
         public const int WINDOW_HEIGHT = 40;
 
         //

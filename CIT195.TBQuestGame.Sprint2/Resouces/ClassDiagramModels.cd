@@ -13,33 +13,41 @@
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Enum Name="CIT195.TBQuestGame.Sprint2.Character.GenderName">
+      <Enum Name="CIT195.TBQuestGame.Sprint2.Character.GenderType">
         <TypeIdentifier>
           <NewMemberFileName>Models\Character.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
-      <Enum Name="CIT195.TBQuestGame.Sprint2.Character.RaceName">
+      <Enum Name="CIT195.TBQuestGame.Sprint2.Character.RaceType">
         <TypeIdentifier>
           <NewMemberFileName>Models\Character.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>QAAAMAAAAAAAAACBAAAAAAQAAAAAAAAAACAAAAEAAAA=</HashCode>
+      <HashCode>QAAAMAAAAAAAAACBAAAAAAQAAAEAAAAAACAAAAEAAAA=</HashCode>
       <FileName>Models\Character.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CIT195.TBQuestGame.Sprint2.Guest">
     <Position X="5.5" Y="3.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAAEAAEgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAAEAAAAAAAAEgAEAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Guest.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CIT195.TBQuestGame.Sprint2.Player">
     <Position X="0.5" Y="0.5" Width="2" />
+    <NestedTypes>
+      <Enum Name="CIT195.TBQuestGame.Sprint2.Player.ActionChoice" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Models\Player.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAQAAAIEAACACAAAAAAAAAQA=</HashCode>
       <FileName>Models\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -56,14 +64,14 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAgAAQEAAgAAAQAAEAAAAIABQAAAAAAAAA=</HashCode>
+      <HashCode>AIgAIAAAAAAgAAQEAAgAAAQAAEAAAAYABQBAAAAAAAA=</HashCode>
       <FileName>Models\Room.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CIT195.TBQuestGame.Sprint2.GuestList">
     <Position X="5.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>IAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Models\GuestList.cs</FileName>
     </TypeIdentifier>
   </Class>

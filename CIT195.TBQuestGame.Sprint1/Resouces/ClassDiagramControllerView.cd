@@ -3,29 +3,29 @@
   <Class Name="CIT195.TBQuestGame.Sprint1.GameController">
     <Position X="1" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAUgAAABABAAAAIhAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAAAUgAAABABEAAAIhAAAACAAIAAAAAAAAAAA=</HashCode>
       <FileName>Controllers\GameController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CIT195.TBQuestGame.Sprint1.Controllers.Settings">
-    <Position X="1" Y="4" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAIAA=</HashCode>
-      <FileName>Controllers\Settings.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CIT195.TBQuestGame.Sprint1.ConsoleView">
     <Position X="4" Y="0.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>BQiFAAEACQAACgAAAEAAIAIBAAEAAAAIgQAAAAIAACA=</HashCode>
+      <HashCode>BQiFAAUACQAACgAAAEAAIAIBAAEAAAAIgQAAAAIAAAA=</HashCode>
       <FileName>Views\ConsoleView.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CIT195.TBQuestGame.Sprint1.Views.Settings">
-    <Position X="4" Y="6.25" Width="2.75" />
+  <Class Name="CIT195.TBQuestGame.Sprint1.ControllerSettings">
+    <Position X="1" Y="4.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
-      <FileName>Views\Settings.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Controllers\ControllerSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CIT195.TBQuestGame.Sprint1.ViewSettings">
+    <Position X="4" Y="6.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AACAAAQACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\ViewSettings.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

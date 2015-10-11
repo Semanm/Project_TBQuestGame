@@ -83,13 +83,11 @@ namespace CIT195.TBQuestGame.Sprint2
                 {
                     _userConsoleView.DisplayRoomMessage();
                 }
-
-
+                
                 _playerActionChoice = _userConsoleView.GetPlayerAction();
 
                 ImplementPlayerAction(_playerActionChoice);
 
-                Console.ReadLine();
             }
 
             _userConsoleView.DisplayReset();
@@ -123,12 +121,12 @@ namespace CIT195.TBQuestGame.Sprint2
                         int newRoomNumber = _userConsoleView.GetPlayerRoomNumberChoice();
 
                         _myPlayer.CurrentRoomNumber = newRoomNumber;
+                        _myPlayer.InHall = false;
                     }
                     break;
                 default:
+                    throw new System.ArgumentException("This ActionChoice has not been implemnted in the switch.", "");
                     break;
-
-
             }
         }
 

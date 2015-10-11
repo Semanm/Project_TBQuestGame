@@ -503,8 +503,8 @@ namespace CIT195.TBQuestGame.Sprint2
                     playerActionChoice = (Player.ActionChoice)playerActionChoiceIndex;
 
                     Console.WriteLine();
-                    DisplayMessage("You have choosen the following action:");
-                    DisplayMessage(ConsoleUtil.ToLabelFormat(playerActionChoice.ToString()));
+                    DisplayMessage("You have choosen the following action: " +
+                        ConsoleUtil.ToLabelFormat(playerActionChoice.ToString()));
                     validPlayerResponse = true;
 
                     DisplayContinuePrompt();
@@ -540,9 +540,9 @@ namespace CIT195.TBQuestGame.Sprint2
             {
                 DisplayReset();
 
-                DisplayMessage("");
+                Console.WriteLine();
                 DisplayMessage("Choose one of the following rooms.");
-                DisplayMessage("");
+                Console.WriteLine();
 
                 int displayedRoomNumber;
 
@@ -554,7 +554,7 @@ namespace CIT195.TBQuestGame.Sprint2
                     DisplayMessage("(" + displayedRoomNumber + ") " + room.Name);
                 }
 
-                DisplayMessage("");
+                Console.WriteLine();
                 DisplayPromptMessage("Enter the number of the room you would like to enter: ");
 
                 playerResponse = Console.ReadLine();
@@ -570,9 +570,10 @@ namespace CIT195.TBQuestGame.Sprint2
                     // adjust the player's room number choice to match the array index
                     playerRoomNumberChoice--;
 
-                    DisplayMessage("");
-                    DisplayMessage("You have choosen the following room:");
-                    DisplayMessage(_hall.Rooms[playerRoomNumberChoice].Name);
+                    Console.WriteLine();
+                    DisplayMessage("You have choosen the following room: " +
+                        _hall.Rooms[playerRoomNumberChoice].Name);
+
                     validPlayerResponse = true;
 
                     DisplayContinuePrompt();
@@ -593,6 +594,6 @@ namespace CIT195.TBQuestGame.Sprint2
 
         }
 
-         #endregion
+        #endregion
     }
 }
