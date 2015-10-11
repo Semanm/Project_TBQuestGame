@@ -112,7 +112,7 @@ namespace CIT195.TBQuestGame.Sprint2
         /// </summary>
         public void DisplayExitPrompt()
         {
-            Console.ResetColor();
+            DisplayReset();
 
             Console.CursorVisible = false;
 
@@ -219,13 +219,13 @@ namespace CIT195.TBQuestGame.Sprint2
             DisplayContinuePrompt();
         }
 
-        // TODO Sprint 2 Mod 3 - add hall message
+        // TODO Sprint 2 Mod 03 - add hall message
         /// <summary>
         /// display this message to the player when in the hall
         /// </summary>
         public void DisplayHallMessage()
         {
-            string hallMessage = "You are standing in a Deadly hall. The hall has " +
+            string hallMessage = "You are standing in a long hall. The hall has " +
                 ControllerSettings.MAX_NUMBER_OF_ROOMS +
                 " doors. Each door leads to one of the following rooms.";
 
@@ -243,7 +243,7 @@ namespace CIT195.TBQuestGame.Sprint2
             DisplayContinuePrompt();
         }
 
-        // TODO Sprint 2 Mod 4 - add room message
+        // TODO Sprint 2 Mod 04 - add room message
         /// <summary>
         /// display this message to the player when in a room
         /// </summary>
@@ -447,7 +447,7 @@ namespace CIT195.TBQuestGame.Sprint2
             Console.CursorVisible = true;
         }
 
-        // TODO Sprint 2 Mod 8a - add method to display the player's action choice options
+        // TODO Sprint 2 Mod 08a - add method to display the player's action choice options
         /// <summary>
         /// display the available actions choices
         /// </summary>
@@ -470,7 +470,7 @@ namespace CIT195.TBQuestGame.Sprint2
             }
         }
 
-        // TODO Sprint 2 Mod 8b - add method to get player's action choice
+        // TODO Sprint 2 Mod 08b - add method to get player's action choice
         /// <summary>
         /// get player action choice
         /// </summary>
@@ -498,7 +498,6 @@ namespace CIT195.TBQuestGame.Sprint2
                     (Int32.TryParse(playerResponse, out playerActionChoiceIndex)) &&
                     (playerActionChoiceIndex != 0) &&
                     (playerActionChoiceIndex <= _myPlayer.ActionCount - 1)
-
                     )
                 {
                     playerActionChoice = (Player.ActionChoice)playerActionChoiceIndex;
@@ -506,9 +505,9 @@ namespace CIT195.TBQuestGame.Sprint2
                     Console.WriteLine();
                     DisplayMessage("You have choosen the following action:");
                     DisplayMessage(ConsoleUtil.ToLabelFormat(playerActionChoice.ToString()));
+                    validPlayerResponse = true;
 
                     DisplayContinuePrompt();
-
                 }
                 else
                 {
@@ -526,6 +525,74 @@ namespace CIT195.TBQuestGame.Sprint2
 
         }
 
-        #endregion
+        // TODO Sprint 2 Mod 12 - add method to get the player's room number choice
+        /// <summary>
+        ///  get player room number choice
+        /// </summary>
+        /// <returns>room number</returns>
+        public int GetPlayerRoomNumberChoice()
+        {
+            int playerRoomNumberChoice = -1;
+            string playerResponse;
+            bool validPlayerResponse = false;
+
+            while (!validPlayerResponse)
+            {
+                DisplayReset();
+
+                DisplayMessage("");
+                DisplayMessage("Choose one of the following rooms.");
+                DisplayMessage("");
+
+                int displayedRoomNumber;
+
+                foreach (Room room in _hall.Rooms)
+                {
+                    // add one to the array indes to start the diplayed numbering at 1
+                    displayedRoomNumber = Array.IndexOf(_hall.Rooms, room) + 1;
+
+                    DisplayMessage("(" + displayedRoomNumber + ") " + room.Name);
+                }
+
+                DisplayMessage("");
+                DisplayPromptMessage("Enter the number of the room you would like to enter: ");
+
+                playerResponse = Console.ReadLine();
+
+                // validate user's response
+                if (
+                    (Int32.TryParse(playerResponse, out playerRoomNumberChoice)) &&
+                    (playerRoomNumberChoice > 0) &&
+                    (playerRoomNumberChoice <= ControllerSettings.MAX_NUMBER_OF_ROOMS)
+                    )
+                {
+
+                    // adjust the player's room number choice to match the array index
+                    playerRoomNumberChoice--;
+
+                    DisplayMessage("");
+                    DisplayMessage("You have choosen the following room:");
+                    DisplayMessage(_hall.Rooms[playerRoomNumberChoice].Name);
+                    validPlayerResponse = true;
+
+                    DisplayContinuePrompt();
+                }
+                else
+                {
+                    Console.WriteLine();
+
+                    DisplayMessage("It appears that you have not provided a valid room number." +
+                        "Please use the number before each room's name to indicate your choice.");
+
+                    DisplayContinuePrompt();
+                }
+
+            }
+
+            return playerRoomNumberChoice;
+
+        }
+
+         #endregion
     }
 }

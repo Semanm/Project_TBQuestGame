@@ -20,7 +20,8 @@ namespace CIT195.TBQuestGame.Sprint2
         private Hall _hall;
         private GuestList _guestList;
         private StaffList _staffList;
-        private Player.ActionChoice _playerActionChoice;  // TODO Sprint 2 Mod 7 - add player action choice variable
+        private ConsoleView _userConsoleView;
+        private Player.ActionChoice _playerActionChoice;  // TODO Sprint 2 Mod 07 - add player action choice variable
 
         #endregion
 
@@ -55,6 +56,7 @@ namespace CIT195.TBQuestGame.Sprint2
             InitializeHall();
             InitializeGuestList();
             InitializeStaffList();
+            InitializeUserConsoleView();
         }
 
         /// <summary>
@@ -62,16 +64,12 @@ namespace CIT195.TBQuestGame.Sprint2
         /// </summary>
         private void PlayGame()
         {
-            //
-            // instantiate a new ConsoleView object
-            //
-            ConsoleView userConsoleView = new ConsoleView(_myPlayer, _hall, _guestList, _staffList);
 
-            userConsoleView.DisplayWelcomeScreen();
+            _userConsoleView.DisplayWelcomeScreen();
 
             //userConsoleView.DisplayAllObjectInformation();
 
-            // TODO Sprint 2 Mod 5 - add game loop
+            // TODO Sprint 2 Mod 05 - add game loop
             //
             // game loop
             //
@@ -79,16 +77,59 @@ namespace CIT195.TBQuestGame.Sprint2
             {
                 if (_myPlayer.InHall)
                 {
-                    userConsoleView.DisplayHallMessage();
+                    _userConsoleView.DisplayHallMessage();
                 }
-                userConsoleView.DisplayRoomMessage();
+                else
+                {
+                    _userConsoleView.DisplayRoomMessage();
+                }
 
-                _playerActionChoice = userConsoleView.GetPlayerAction();
+
+                _playerActionChoice = _userConsoleView.GetPlayerAction();
+
+                ImplementPlayerAction(_playerActionChoice);
+
                 Console.ReadLine();
             }
 
-            userConsoleView.DisplayReset();
-            userConsoleView.DisplayExitPrompt();
+            _userConsoleView.DisplayReset();
+            _userConsoleView.DisplayExitPrompt();
+        }
+        // TODO Sprint 2 Mod 11 - create a method to process the user's action choice
+        /// <summary>
+        /// process the user's action choice
+        /// </summary>
+        /// <param name="playerActionChoice">playerActionChoice</param>
+        private void ImplementPlayerAction(Player.ActionChoice playerActionChoice)
+        {
+            switch (playerActionChoice)
+            {
+                case Player.ActionChoice.None:
+                    throw new System.ArgumentException("None is and invalid ActionChoice", "");
+                case Player.ActionChoice.QuitGame:
+                    _userConsoleView.DisplayExitPrompt();
+                    break;
+                case Player.ActionChoice.Move:
+                    // player moves to hall
+                    if (!_myPlayer.InHall)
+                    {
+                        _myPlayer.InHall = true;
+
+                        _userConsoleView.DisplayHallMessage();
+                    }
+                    // player chooses room
+                    else
+                    {
+                        int newRoomNumber = _userConsoleView.GetPlayerRoomNumberChoice();
+
+                        _myPlayer.CurrentRoomNumber = newRoomNumber;
+                    }
+                    break;
+                default:
+                    break;
+
+
+            }
         }
 
         /// <summary>
@@ -102,8 +143,8 @@ namespace CIT195.TBQuestGame.Sprint2
                 Player.RaceType.Human,
                 1);
 
-            // TODO Sprint 2 Mod 2 - initialize InHall property
-            _myPlayer.InHall = false;
+            // TODO Sprint 2 Mod 02 - initialize InHall property
+            _myPlayer.InHall = true;
         }
 
         /// <summary>
@@ -217,6 +258,17 @@ namespace CIT195.TBQuestGame.Sprint2
                 }
             }
 
+        }
+
+        /// <summary>
+        /// initialize the ConsoleView object
+        /// </summary>
+        public void InitializeUserConsoleView()
+        {
+            //
+            // instantiate a new ConsoleView object
+            //
+            _userConsoleView = new ConsoleView(_myPlayer, _hall, _guestList, _staffList);
         }
 
         #endregion

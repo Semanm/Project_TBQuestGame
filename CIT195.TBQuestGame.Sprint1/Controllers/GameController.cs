@@ -20,6 +20,7 @@ namespace CIT195.TBQuestGame.Sprint1
         private Hall _hall;
         private GuestList _guestList;
         private StaffList _staffList;
+        private ConsoleView _userConsoleView;
 
         #endregion
 
@@ -54,6 +55,7 @@ namespace CIT195.TBQuestGame.Sprint1
             InitializeHall();
             InitializeGuestList();
             InitializeStaffList();
+            InitializeUserConsoleView();
         }
 
         /// <summary>
@@ -64,14 +66,14 @@ namespace CIT195.TBQuestGame.Sprint1
             //
             // instantiate a new ConsoleView object
             //
-            ConsoleView userConsoleView = new ConsoleView(_myPlayer, _hall, _guestList, _staffList);
+            _userConsoleView = new ConsoleView(_myPlayer, _hall, _guestList, _staffList);
 
-            userConsoleView.DisplayWelcomeScreen();
+            _userConsoleView.DisplayWelcomeScreen();
 
-            userConsoleView.DisplayAllObjectInformation();
+            _userConsoleView.DisplayAllObjectInformation();
 
-            userConsoleView.DisplayReset();
-            userConsoleView.DisplayExitPrompt();
+            _userConsoleView.DisplayReset();
+            _userConsoleView.DisplayExitPrompt();
         }
 
         /// <summary>
@@ -197,6 +199,17 @@ namespace CIT195.TBQuestGame.Sprint1
                 }
             }
 
+        }
+
+        /// <summary>
+        /// initialize the ConsoleView object
+        /// </summary>
+        public void InitializeUserConsoleView()
+        {
+            //
+            // instantiate a new ConsoleView object
+            //
+            _userConsoleView = new ConsoleView(_myPlayer, _hall, _guestList, _staffList);
         }
 
         #endregion
