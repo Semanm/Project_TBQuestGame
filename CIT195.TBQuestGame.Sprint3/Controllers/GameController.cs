@@ -22,7 +22,7 @@ namespace CIT195.TBQuestGame.Sprint3
         private StaffList _staffList;
         private ConsoleView _userConsoleView;
         private List<CurrencyType> _gameCurrency; //TODO Sprint 3 Mod 02 - add a gameCurrency backing field for the game currency list to the GameController
-        private Player.ActionChoice _playerActionChoice; 
+        private Player.ActionChoice _playerActionChoice;
 
         #endregion
 
@@ -53,11 +53,11 @@ namespace CIT195.TBQuestGame.Sprint3
             //
             // instantiate a Player, Hall, and Guests
             //
-            InitializePlayer();
             InitializeHall();
             InitializeGuestList();
             InitializeStaffList();
             InitializeGameCurrency();
+            InitializePlayer();
             InitializeUserConsoleView();
         }
 
@@ -69,7 +69,7 @@ namespace CIT195.TBQuestGame.Sprint3
 
             _userConsoleView.DisplayWelcomeScreen();
 
-            //userConsoleView.DisplayAllObjectInformation();
+            _userConsoleView.DisplayAllObjectInformation();
 
             //
             // game loop
@@ -84,7 +84,7 @@ namespace CIT195.TBQuestGame.Sprint3
                 {
                     _userConsoleView.DisplayRoomMessage();
                 }
-                
+
                 _playerActionChoice = _userConsoleView.GetPlayerAction();
 
                 ImplementPlayerAction(_playerActionChoice);
@@ -143,6 +143,47 @@ namespace CIT195.TBQuestGame.Sprint3
                 1);
 
             _myPlayer.InHall = true;
+
+            // TODO Sprint 3 Mod 13 - give the player some money at the start of the game
+            // TODO Sprint 3 Mod 13! - handle magic numbers
+            // give the player some money at the start of the game
+            PlayerCurrency goldCoins = new PlayerCurrency()
+            {
+                CurrencyType = _gameCurrency[0],
+                Quantity = 2
+            };
+            PlayerCurrency silverCoins = new PlayerCurrency()
+            {
+                CurrencyType = _gameCurrency[1],
+                Quantity = 5
+            };
+            PlayerCurrency bronzeCoins = new PlayerCurrency()
+            {
+                CurrencyType = _gameCurrency[2],
+                Quantity = 20
+            };
+
+            _myPlayer.Treasure.Currency.Add(goldCoins);
+            _myPlayer.Treasure.Currency.Add(silverCoins);
+            _myPlayer.Treasure.Currency.Add(bronzeCoins);
+
+            // TODO Sprint 3 Mod 22 - give the player some weapons
+            // give the player some weapons
+            _myPlayer.Weapons.Add(
+                new Weapon
+                {
+                    Type = Weapon.WeaponType.gun,
+                    Name = "Thompson Submachine Gun",
+                    Description = "Fast firing submachine gun with a 50 shell mag"
+                });
+
+            _myPlayer.Weapons.Add(
+                new Weapon
+                {
+                    Type = Weapon.WeaponType.knife,
+                    Name = "Bowie Knife",
+                    Description = "Really big knife"
+                });
         }
 
         /// <summary>
@@ -275,13 +316,13 @@ namespace CIT195.TBQuestGame.Sprint3
             CurrencyType silverCoin = new CurrencyType(
                 "Silver Coin",
                 "Silver coin with the Queen's face on one side and the River Thomes on the other side.",
-                CurrencyType.BaseMaterialType.Gold,
+                CurrencyType.BaseMaterialType.Silver,
                 1);
 
             CurrencyType bronzeCoin = new CurrencyType(
                 "Bronze Coin",
                 "Bronze coin with the Prince's face on one side and Mount Fidoria on the other side.",
-                CurrencyType.BaseMaterialType.Gold,
+                CurrencyType.BaseMaterialType.Bronze,
                 1);
 
             _gameCurrency.Add(goldCoin);
@@ -289,6 +330,7 @@ namespace CIT195.TBQuestGame.Sprint3
             _gameCurrency.Add(bronzeCoin);
         }
 
+        // TODO Sprint 3 Mod 06 - modify the ConsoleView constructor call to add the list of game currency
         /// <summary>
         /// initialize the ConsoleView object
         /// </summary>

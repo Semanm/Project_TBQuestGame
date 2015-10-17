@@ -40,7 +40,7 @@ namespace CIT195.TBQuestGame.Sprint3
 
         #region CONSTRUCTORS
 
-        // TODO Sprint 3 Mod 05 - modify the constructor to accept the list of currency types
+        // TODO Sprint 3 Mod 05 - modify the ConsoleView constructor to accept the list of currency types
         /// <summary>
         /// constructor to create the console view, send all major data objects
         /// </summary>
@@ -332,18 +332,27 @@ namespace CIT195.TBQuestGame.Sprint3
             const int MESSAGE_BOX_TEXT_LENGTH = WINDOW_WIDTH - (2 * DISPLAY_HORIZONTAL_MARGIN);
             const int MESSAGE_BOX_HORIZONTAL_MARGIN = DISPLAY_HORIZONTAL_MARGIN;
 
-            //
-            // create a list of strings to hold the wrapped text message
-            //
-            List<string> messageLines;
-
-            //
-            // call utility method to wrap text and loop through list of strings to display
-            //
-            messageLines = ConsoleUtil.Wrap(message, MESSAGE_BOX_TEXT_LENGTH, MESSAGE_BOX_HORIZONTAL_MARGIN);
-            foreach (var messageLine in messageLines)
+            // message is not an empty line, display text
+            if (message != "")
             {
-                Console.WriteLine(messageLine);
+                //
+                // create a list of strings to hold the wrapped text message
+                //
+                List<string> messageLines;
+
+                //
+                // call utility method to wrap text and loop through list of strings to display
+                //
+                messageLines = ConsoleUtil.Wrap(message, MESSAGE_BOX_TEXT_LENGTH, MESSAGE_BOX_HORIZONTAL_MARGIN);
+                foreach (var messageLine in messageLines)
+                {
+                    Console.WriteLine(messageLine);
+                }
+            }
+            // display an empty line
+            else
+            {
+                Console.WriteLine();
             }
         }
 
@@ -405,8 +414,11 @@ namespace CIT195.TBQuestGame.Sprint3
                     leftTab + "2. Hall Information" + Environment.NewLine +
                     leftTab + "3. Guest List Information" + Environment.NewLine +
                     leftTab + "4. Staff List Information" + Environment.NewLine +
-                    leftTab + "5. Exit" + Environment.NewLine);
+                    leftTab + "5. Game Currency Types" + Environment.NewLine +
+                    leftTab + "6. Player Treasure" + Environment.NewLine +
+                    leftTab + "9. Exit" + Environment.NewLine);
 
+                // TODO Sprint 3 Mod 08 - modify the DisplayAllObjectInformation to handle game currency
                 //
                 // get and process the user's response
                 // note: ReadKey argument set to "true" disables the echoing of the key press
@@ -427,6 +439,12 @@ namespace CIT195.TBQuestGame.Sprint3
                         DisplayStaffListInformation();
                         break;
                     case '5':
+                        DisplayGameCurrency();
+                        break;
+                    case '6':
+                        DisplayPlayerTreasure();
+                        break;
+                    case '9':
                         usingMenu = false;
                         break;
                     default:
@@ -464,6 +482,72 @@ namespace CIT195.TBQuestGame.Sprint3
                         ConsoleUtil.ToLabelFormat(choice.ToString());
                     DisplayMessage(actionChoiceText);
                 }
+            }
+        }
+
+        // TODO Sprint 3 Mod 07 - add a DisplayGameCurrency method
+        /// <summary>
+        /// display all of the currency types
+        /// </summary>
+        public void DisplayGameCurrency()
+        {
+            DisplayReset();
+
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            DisplayMessage("The game contains the currency types:");
+            Console.ForegroundColor = ConsoleColor.White;
+            DisplayMessage("");
+
+            foreach (CurrencyType currency in _gameCurrency)
+            {
+                DisplayMessage("Currency Name: " + currency.Name);
+                DisplayMessage("Currency Description: " + currency.Description);
+                DisplayMessage("Currency Base Material: " + currency.BaseMaterial);
+                DisplayMessage("Currency Value: " + currency.Value);
+                DisplayMessage("");
+            }
+
+            DisplayContinuePrompt();
+        }
+
+        // TODO Sprint 3 Mod 14 - add a DisplayPlayerTreasure method
+        /// <summary>
+        /// display all of the currency types
+        /// </summary>
+        public void DisplayPlayerTreasure()
+        {
+            DisplayReset();
+
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            DisplayMessage("The Player has the following treasure:");
+            Console.ForegroundColor = ConsoleColor.White;
+            DisplayMessage("");
+
+            DisplayPlayerCurrency();
+
+            DisplayContinuePrompt();
+        }
+
+        // TODO Sprint 3 Mod 12 - add a DisplayPlayerCurrency method
+        /// <summary>
+        /// display all of the currency types
+        /// </summary>
+        public void DisplayPlayerCurrency()
+        {
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            DisplayMessage("Currency:");
+            Console.ForegroundColor = ConsoleColor.White;
+            DisplayMessage("");
+
+            foreach (PlayerCurrency currency in _myPlayer.Treasure.Currency)
+            {
+                DisplayMessage(currency.Quantity + " " + currency.CurrencyType.Name);
             }
         }
 

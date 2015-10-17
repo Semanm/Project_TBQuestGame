@@ -334,18 +334,27 @@ namespace CIT195.TBQuestGame.Sprint2
             const int MESSAGE_BOX_TEXT_LENGTH = WINDOW_WIDTH - (2 * DISPLAY_HORIZONTAL_MARGIN);
             const int MESSAGE_BOX_HORIZONTAL_MARGIN = DISPLAY_HORIZONTAL_MARGIN;
 
-            //
-            // create a list of strings to hold the wrapped text message
-            //
-            List<string> messageLines;
-
-            //
-            // call utility method to wrap text and loop through list of strings to display
-            //
-            messageLines = ConsoleUtil.Wrap(message, MESSAGE_BOX_TEXT_LENGTH, MESSAGE_BOX_HORIZONTAL_MARGIN);
-            foreach (var messageLine in messageLines)
+            // message is not an empty line, display text
+            if (message != "")
             {
-                Console.WriteLine(messageLine);
+                //
+                // create a list of strings to hold the wrapped text message
+                //
+                List<string> messageLines;
+
+                //
+                // call utility method to wrap text and loop through list of strings to display
+                //
+                messageLines = ConsoleUtil.Wrap(message, MESSAGE_BOX_TEXT_LENGTH, MESSAGE_BOX_HORIZONTAL_MARGIN);
+                foreach (var messageLine in messageLines)
+                {
+                    Console.WriteLine(messageLine);
+                }
+            }
+            // display an empty line
+            else
+            {
+                Console.WriteLine();
             }
         }
 

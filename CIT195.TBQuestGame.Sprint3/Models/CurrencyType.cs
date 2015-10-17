@@ -9,6 +9,7 @@ namespace CIT195.TBQuestGame.Sprint3
     // TODO Sprint 3 Mod 01 - add a currency type structure
     public struct CurrencyType
     {
+
         #region ENUMERABLES, DICTIONARIES
 
         public enum BaseMaterialType
@@ -88,8 +89,5 @@ namespace CIT195.TBQuestGame.Sprint3
 
         #endregion
         
-
-
-
     }
 }
