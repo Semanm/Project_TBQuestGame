@@ -416,7 +416,8 @@ namespace CIT195.TBQuestGame.Sprint3
                     leftTab + "4. Staff List Information" + Environment.NewLine +
                     leftTab + "5. Game Currency Types" + Environment.NewLine +
                     leftTab + "6. Player Treasure" + Environment.NewLine +
-                    leftTab + "9. Exit" + Environment.NewLine);
+                    leftTab + "7. Player Weapons" + Environment.NewLine +
+                    leftTab + "E. Exit" + Environment.NewLine);
 
                 // TODO Sprint 3 Mod 08 - modify the DisplayAllObjectInformation to handle game currency
                 //
@@ -444,7 +445,10 @@ namespace CIT195.TBQuestGame.Sprint3
                     case '6':
                         DisplayPlayerTreasure();
                         break;
-                    case '9':
+                    case '7':
+                        DisplayPlayerWeapons();
+                        break;
+                    case 'E':
                         usingMenu = false;
                         break;
                     default:
@@ -549,6 +553,32 @@ namespace CIT195.TBQuestGame.Sprint3
             {
                 DisplayMessage(currency.Quantity + " " + currency.CurrencyType.Name);
             }
+        }
+
+        // TODO Sprint 3 Mod 23 - add a DisplayPlayerWeapon method
+        /// <summary>
+        /// display all of the currency types
+        /// </summary>
+        public void DisplayPlayerWeapons()
+        {
+            DisplayReset();
+
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            DisplayMessage("The Player has the following weapons:");
+            Console.ForegroundColor = ConsoleColor.White;
+            DisplayMessage("");
+
+            foreach (Weapon weapon in _myPlayer.Weapons)
+            {
+                DisplayMessage("Weapon Name: " + weapon.Name);
+                DisplayMessage("Weapon Type: " + weapon.Type);
+                DisplayMessage("Weapon Description: " + weapon.Description);
+                DisplayMessage("");
+            }
+
+            DisplayContinuePrompt();
         }
 
         /// <summary>
