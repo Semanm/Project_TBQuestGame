@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CIT195.TBQuestGame.Sprint2
+namespace CIT195.TBQuestGame.Sprint3
 {
     /// <summary>
     /// Player class, inherites from Character class
@@ -13,7 +13,6 @@ namespace CIT195.TBQuestGame.Sprint2
     {
         #region ENUMERABLES
 
-        // TODO Sprint 2 Mod 06 - add enum for player action options
         public enum ActionChoice
         {
             None,
@@ -27,8 +26,6 @@ namespace CIT195.TBQuestGame.Sprint2
 
         private int _lives;
         private bool _inHall;
-
-        // TODO Sprint 2 Mod 09a - add ActionCount property backing file
         private int _actionCount = Enum.GetNames(typeof(ActionChoice)).Length;
 
         #endregion
@@ -40,14 +37,12 @@ namespace CIT195.TBQuestGame.Sprint2
             set { _lives = value; }
         }
 
-        // TODO Sprint 2 Mod 01 - add InHall bool to Player class
         public bool InHall
         {
             get { return _inHall; }
             set { _inHall = value; }
         }
 
-        // TODO Sprint 2 Mod 09b - add ActionCount property to expose the number of ActionChoice
         public int ActionCount
         {
             get { return _actionCount; }
