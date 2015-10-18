@@ -31,15 +31,16 @@ namespace CIT195.TBQuestGame.Sprint3EZ
         // TODO Sprint 3 Mod 01c - add a dictionary to hold the values of each material
         private Dictionary<Material, int> materialValue = new Dictionary<Material, int>();
 
-        private List<Coin> _coins;
+        // TODO Sprint 3 Mod 04a - add a list of coins to hold the coin types
+        private List<Coin> _coinTypes;
 
         #endregion
 
         #region PROPERTIES
-        public List<Coin> Coins
+        public List<Coin> CoinTypes
         {
-            get { return _coins; }
-            set { _coins = value; }
+            get { return _coinTypes; }
+            set { _coinTypes = value; }
         }
 
         #endregion
@@ -51,7 +52,7 @@ namespace CIT195.TBQuestGame.Sprint3EZ
             // TODO Sprint 3 Mod 01e - call the initialize material values method
             InitializeMaterialValues();
 
-            _coins = new List<Coin>();
+            _coinTypes = new List<Coin>();
 
         }
 
@@ -60,7 +61,7 @@ namespace CIT195.TBQuestGame.Sprint3EZ
         #region METHODS
 
         // TODO Sprint 3 Mod 01d - add a method to initialze the material values
-        private void InitializeMaterialValues()
+        public void InitializeMaterialValues()
         {
             materialValue[Material.Gold] = 10;
             materialValue[Material.Silver] = 5;
@@ -69,12 +70,18 @@ namespace CIT195.TBQuestGame.Sprint3EZ
             materialValue[Material.Emerald] = 15;
         }
 
+
         // TODO Sprint 3 Mod 01f - add a method to return a material's value
         public int Value(Material materialType)
         {
             return materialValue[materialType];
         }
 
+        // TODO Sprint 3 Mod 04b - add a method to calculate the vaule of each coin type
+        public int CoinValue(Coin coin)
+        {
+            return coin.QuantityOfMaterial * materialValue[coin.TypeOfMaterial];
+        }
         #endregion
     }
 }

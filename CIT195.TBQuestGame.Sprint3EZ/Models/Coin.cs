@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CIT195.TBQuestGame.Sprint3EZ
 {
-    //TODO Sprint 3 Mod 03 - add a Coin class
+    //TODO Sprint 3 Mod 03a - add a Coin class
     /// <summary>
     /// class to create new coins
     /// </summary>
@@ -20,12 +20,25 @@ namespace CIT195.TBQuestGame.Sprint3EZ
 
         #region FIELDS
 
+        private string _name;
+        private string _description;
         private Treasure.Material _typeOfMaterial;
         private int _quantitiyOfMaterial;
 
         #endregion
 
         #region PROPERTIES
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+            set { _description = value; }
+        }
 
         public Treasure.Material TypeOfMaterial
         {
@@ -43,8 +56,10 @@ namespace CIT195.TBQuestGame.Sprint3EZ
 
         #region CONSTRUCTORS
 
-        public Coin(Treasure.Material typeOfMaterial, int quantityOfMaterial)
+        public Coin(string name, string description, Treasure.Material typeOfMaterial, int quantityOfMaterial)
         {
+            _name = name;
+            _description = description;
             _typeOfMaterial = typeOfMaterial;
             _quantitiyOfMaterial = quantityOfMaterial;
         }

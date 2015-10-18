@@ -144,31 +144,32 @@ namespace CIT195.TBQuestGame.Sprint3EZ
 
             _myPlayer.InHall = true;
 
-            // TODO Sprint 3 Mod 13 - give the player some money at the start of the game
-            // TODO Sprint 3 Mod 13! - handle magic numbers
+            // TODO Sprint 3 Mod 09 - give the player some coins at the start of the game
+            // TOOD Sprint 3 Mod 09! - handle magic numbers
             // give the player some money at the start of the game
-            PlayerCurrency goldCoins = new PlayerCurrency()
+            CoinGroup smallGoldCoins = new CoinGroup()
             {
-                CurrencyType = _gameCurrency[0],
-                Quantity = 2
+                Quantity = 2,
+                CoinType = _treasures.CoinTypes[0]
             };
-            PlayerCurrency silverCoins = new PlayerCurrency()
+            CoinGroup smallSilverCoins = new CoinGroup()
             {
-                CurrencyType = _gameCurrency[1],
-                Quantity = 5
+                Quantity = 10,
+                CoinType = _treasures.CoinTypes[1]
             };
-            PlayerCurrency bronzeCoins = new PlayerCurrency()
+            CoinGroup smallBronzeCoins = new CoinGroup()
             {
-                CurrencyType = _gameCurrency[2],
-                Quantity = 20
+                Quantity = 20,
+                CoinType = _treasures.CoinTypes[2]
             };
 
-            _myPlayer.Treasure.Currency.Add(goldCoins);
-            _myPlayer.Treasure.Currency.Add(silverCoins);
-            _myPlayer.Treasure.Currency.Add(bronzeCoins);
+            _myPlayer.Coins.Add(smallGoldCoins);
+            _myPlayer.Coins.Add(smallSilverCoins);
+            _myPlayer.Coins.Add(smallBronzeCoins);
 
-            // TODO Sprint 3 Mod 23 - give the player some weapons
-            // give the player some weapons
+
+            // TODO Sprint 3 Mod 23 - give the player some weapons at the beginning of the game
+            // give the player some weapons at the beginning of the game
             _myPlayer.Weapons.Add(
                 new Weapon
                 {
@@ -307,32 +308,32 @@ namespace CIT195.TBQuestGame.Sprint3EZ
         {
             _treasures = new Treasure();
 
-            _gameCurrency = new List<CurrencyType>();
 
-            CurrencyType goldCoin = new CurrencyType(
-                "Gold Coin",
+            // TODO Sprint 3 Mod 06 - initialize the coin types
+            Coin goldCoin = new Coin(
+                "Small Gold Coin",
                 "Gold coin with the Kings's face on one side and the Castle Wilhelm on the other side.",
-                CurrencyType.BaseMaterialType.Gold,
+                Treasure.Material.Gold,
                 1);
 
-            CurrencyType silverCoin = new CurrencyType(
-                "Silver Coin",
+            Coin silverCoin = new Coin(
+                "Samll Silver Coin",
                 "Silver coin with the Queen's face on one side and the River Thomes on the other side.",
-                CurrencyType.BaseMaterialType.Silver,
+                Treasure.Material.Silver,
                 1);
 
-            CurrencyType bronzeCoin = new CurrencyType(
-                "Bronze Coin",
+            Coin bronzeCoin = new Coin(
+                "Small Bronze Coin",
                 "Bronze coin with the Prince's face on one side and Mount Fidoria on the other side.",
-                CurrencyType.BaseMaterialType.Bronze,
+                Treasure.Material.Bronze,
                 1);
 
-            _gameCurrency.Add(goldCoin);
-            _gameCurrency.Add(silverCoin);
-            _gameCurrency.Add(bronzeCoin);
+            _treasures.CoinTypes.Add(goldCoin);
+            _treasures.CoinTypes.Add(silverCoin);
+            _treasures.CoinTypes.Add(bronzeCoin);
         }
 
-        // TODO Sprint 3 Mod 06 - modify the ConsoleView constructor call to add the list of game currency
+        // TODO Sprint 3 Mod 05c - modify the ConsoleView constructor call to add the list of treasure types
         /// <summary>
         /// initialize the ConsoleView object
         /// </summary>
@@ -341,7 +342,7 @@ namespace CIT195.TBQuestGame.Sprint3EZ
             //
             // instantiate a new ConsoleView object
             //
-            _userConsoleView = new ConsoleView(_myPlayer, _hall, _guestList, _staffList, _gameCurrency);
+            _userConsoleView = new ConsoleView(_myPlayer, _hall, _guestList, _staffList, _treasures);
         }
 
         #endregion
