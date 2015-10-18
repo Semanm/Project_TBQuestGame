@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CIT195.TBQuestGame.Sprint3
+namespace CIT195.TBQuestGame.Sprint3EZ
 {
     // TODO Sprint 3 Mod 01 - add a currency type structure
     public struct CurrencyType

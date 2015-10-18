@@ -27,7 +27,7 @@ namespace CIT195.TBQuestGame.Sprint3
         private int _lives;
         private bool _inHall;
         private int _actionCount = Enum.GetNames(typeof(ActionChoice)).Length;
-        private Treasure _treasure; // TODO Sprint 3 Mod 12a - add a field/property to hold the player's treasure
+        private List<CoinGroup> _coins; // TODO Sprint 3 Mod 07a - add a field/property to hold the player's coins
         private List<Weapon> _weapons; // TODO Sprint 3 Mod 21 - add a field/property to hold the player's weapons      
 
         #endregion
@@ -50,10 +50,10 @@ namespace CIT195.TBQuestGame.Sprint3
             get { return _actionCount; }
         }
         
-        public Treasure Treasure
+        public List<CoinGroup> Coins
         {
-            get { return _treasure; }
-            set { _treasure = value; }
+            get { return _coins; }
+            set { _coins = value; }
         }
 
         public List<Weapon> Weapons
@@ -82,8 +82,8 @@ namespace CIT195.TBQuestGame.Sprint3
         {
             _lives = 1;
 
-            // TODO Sprint 3 Mod 12b - instantiate the player's treasure
-            _treasure = new Treasure();
+            // TODO Sprint 3 Mod 07b - instantiate the player's coin group list
+            _coins = new List<CoinGroup>();
 
             // TODO Sprint 3 Mod 22 - instantiate the player's weapons list
             _weapons = new List<Weapon>();

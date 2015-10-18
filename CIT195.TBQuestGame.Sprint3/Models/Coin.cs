@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CIT195.TBQuestGame.Sprint3EZ
+namespace CIT195.TBQuestGame.Sprint3
 {
     //TODO Sprint 3 Mod 03a - add a Coin class
     /// <summary>

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CIT195.TBQuestGame.Sprint3")]
+[assembly: AssemblyTitle("CIT195.TBQuestGame.Sprint3EZ")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Northwestern Michigan College")]
-[assembly: AssemblyProduct("CIT195.TBQuestGame.Sprint3")]
+[assembly: AssemblyProduct("CIT195.TBQuestGame.Sprint3EZ")]
 [assembly: AssemblyCopyright("Copyright © Northwestern Michigan College 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("661c1d3f-3f98-4b47-9b39-4dbb7285482a")]
+[assembly: Guid("33c78ade-56d0-4094-9911-ac28d44422d7")]
 
 // Version information for an assembly consists of the following four values:
 //

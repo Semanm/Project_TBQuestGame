@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace CIT195.TBQuestGame.Sprint3EZ
+namespace CIT195.TBQuestGame.Sprint3
 {
     // TODO Sprint 3 Mod 03b - add a CoinGroup class to hold a coin type and quantity
     /// <summary>

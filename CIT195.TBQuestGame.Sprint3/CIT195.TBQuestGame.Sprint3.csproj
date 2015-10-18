@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{80F4C784-DF04-4437-A5E6-BBF9F12FAA9D}</ProjectGuid>
+    <ProjectGuid>{5E57D6E8-D27F-43AF-85E3-9983BFD2B6DA}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CIT195.TBQuestGame.Sprint3</RootNamespace>
+    <RootNamespace>CIT195.CIT195.TBQuestGame.Sprint3</RootNamespace>
     <AssemblyName>CIT195.TBQuestGame.Sprint3</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -44,8 +44,8 @@
     <Compile Include="Controllers\ControllerSettings.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Models\Character.cs" />
-    <Compile Include="Models\Currency.cs" />
-    <Compile Include="Models\CurrencyType.cs" />
+    <Compile Include="Models\Coin.cs" />
+    <Compile Include="Models\CoinGroup.cs" />
     <Compile Include="Models\GameItem.cs" />
     <Compile Include="Models\Guest.cs" />
     <Compile Include="Models\GuestList.cs" />
@@ -66,6 +66,7 @@
     <None Include="App.config" />
     <None Include="Resouces\ClassDiagramControllerView.cd" />
     <None Include="Resouces\ClassDiagramModels.cd" />
+    <None Include="Resouces\ClassDiagramModelsTreasures.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
