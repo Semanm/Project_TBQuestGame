@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="CIT195.TBQuestGame.Sprint3.ControllerSettings">
+    <Position X="1.25" Y="5.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Controllers\ControllerSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CIT195.TBQuestGame.Sprint3.GameController">
+    <Position X="1.25" Y="1" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAUgAAABABEAgAIhAAAECAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\GameController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CIT195.TBQuestGame.Sprint3.ConsoleView">
+    <Position X="4.25" Y="1" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>BQiFAAEACQAACgAAAEAAoAIhAAEQAAEIgQAAAEIAACA=</HashCode>
+      <FileName>Views\ConsoleView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CIT195.TBQuestGame.Sprint3.ViewSettings">
+    <Position X="4.25" Y="8" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Views\ViewSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
